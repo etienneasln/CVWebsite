@@ -7,75 +7,94 @@ export class Player extends Phaser.Physics.Arcade.Sprite
         scene.add.existing(this);
         scene.physics.add.existing(this);
 
+        scene.depthGroup.add(this);
+
         this.setCollideWorldBounds(true);
         this.initAnimations();
+        
+        this.setOrigin(0.5,1);
+
+        this.lastDirection='down';
+
+        scene.player=this;
+        scene.depthGroup.add(this);
+                
+    }
+
+    faceDirection(direction, frameindex){
+        this.anims.create({
+            key: direction,
+            frames: [ { key: 'character', frame: frameindex } ],
+            frameRate: 1
+        });
+    }
+
+    moveDirection(direction, frameStart, frameEnd){
+        this.anims.create({
+            key: direction,
+            frames: this.anims.generateFrameNumbers('character', { start: frameStart, end: frameEnd }),
+            frameRate: 10,
+            repeat: -1
+        });
     }
 
     initAnimations ()
     {
-        this.anims.create({
-            key: 'left',
-            frames: this.anims.generateFrameNumbers('character', { start: 3, end: 5 }),
-            frameRate: 10,
-            repeat: -1
-        });
-
-        this.anims.create({
-            key: 'turn',
-            frames: [ { key: 'character', frame: 1 } ],
-            frameRate: 1
-        });
-
-        this.anims.create({
-            key: 'right',
-            frames: this.anims.generateFrameNumbers('character', { start: 6, end: 8 }),
-            frameRate: 10,
-            repeat: -1
-        });
-
-        this.anims.create({
-            key: 'up',
-            frames: this.anims.generateFrameNumbers('character', { start: 9, end: 11 }),
-            frameRate: 10,
-            repeat: -1
-        });
-
-        this.anims.create({
-            key: 'down',
-            frames: this.anims.generateFrameNumbers('character', { start: 0, end: 2 }),
-            frameRate: 10,
-            repeat: -1
-        });
+        this.moveDirection('down',0,2);
+        this.moveDirection('left',3,5);
+        this.moveDirection('right',6,8);
+        this.moveDirection('up',9,11);
+        this.faceDirection('faceDown',1);
+        this.faceDirection('faceLeft',4);
+        this.faceDirection('faceRight',7);
+        this.faceDirection('faceUp',10);
     }
 
     moveLeft ()
     {
         this.setVelocity(-200,0);
         this.anims.play('left', true);
+        this.lastDirection='left';
     }
 
     moveRight ()
     {
         this.setVelocity(200,0);
         this.anims.play('right', true);
+        this.lastDirection='right';
     }
 
     idle ()
     {
         this.setVelocity(0);
-        this.anims.play('turn');
+        switch (this.lastDirection){
+            case 'down':
+                this.anims.play('faceDown', true);
+                break;
+            case 'left':
+                this.anims.play('faceLeft', true);
+                break;
+            case 'right':
+                this.anims.play('faceRight', true);
+                break;
+            case 'up':
+                this.anims.play('faceUp', true);
+                break;
+        }
     }
 
     moveUp ()
     {
         this.setVelocity(0,-200);
         this.anims.play('up', true);
+        this.lastDirection='up';
     }
 
     moveDown ()
     {
         this.setVelocity(0,200);
         this.anims.play('down', true);
+        this.lastDirection='down';
     }
 
 }
