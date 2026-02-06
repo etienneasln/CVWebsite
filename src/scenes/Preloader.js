@@ -6,11 +6,8 @@ export class Preloader extends Phaser.Scene {
 
     preload() {
         this.load.setPath('assets');
-        this.load.image('background', 'tileset.png');
-        this.load.image('university', 'university.png');
-        this.load.image('school', 'primary school.png');
-        this.load.image('slide', 'slide.png');
-        this.load.image('building', 'office building.png');
+        this.load.image('room','Interior tilesets/Room_Builder.png');
+        this.load.image('furniture','Interior tilesets/Furniture.png');
         this.load.spritesheet(
             'character',
             'character.png',

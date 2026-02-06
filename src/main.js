@@ -1,5 +1,6 @@
 import { Preloader } from './scenes/Preloader.js';
 import { Game } from './scenes/Game.js';
+import { Schoolhallway } from './scenes/schoolScenes/Schoolhallway.js';
 
 const config = {
     type: Phaser.AUTO,
@@ -12,7 +13,8 @@ const config = {
     pixelArt: false,
     scene: [
         Preloader,
-        Game
+        Game,
+        Schoolhallway
     ],
     scale: {
         mode: Phaser.Scale.FIT,
@@ -21,7 +23,7 @@ const config = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: false
+            debug: true
         }
     },
 }
