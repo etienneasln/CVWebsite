@@ -114,7 +114,7 @@
  <objectgroup id="8" name="Doors">
   <object id="17" x="43.3333" y="226" width="8" height="8">
    <properties>
-    <property name="targetScene" value=""/>
+    <property name="targetScene" value="USClassroom"/>
    </properties>
   </object>
   <object id="18" x="42.6666" y="374.667" width="8" height="8">

@@ -1,4 +1,4 @@
-export class Building extends Phaser.Physics.Arcade.Image {
+export default class Building extends Phaser.Physics.Arcade.Image {
   constructor (scene, x, y, image, scale = 1, offset = 40) {
     super(scene, x, y, image)
 

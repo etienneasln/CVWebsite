@@ -227,7 +227,7 @@
                         {
                          "name":"targetScene",
                          "type":"string",
-                         "value":""
+                         "value":"USClassroom"
                         }],
                  "rotation":0,
                  "type":"",
@@ -250,8 +250,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":42.6666333333333,
-                 "y":374.666666666667
+                 "x":42.6666,
+                 "y":374.667
                 }, 
                 {
                  "height":8,
@@ -284,8 +284,8 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":906.666666666667,
-                 "y":375.333666666667
+                 "x":906.667,
+                 "y":375.334
                 }, 
                 {
                  "height":8,
@@ -302,7 +302,7 @@
                  "visible":true,
                  "width":8,
                  "x":476,
-                 "y":632.666666666667
+                 "y":632.667
                 }],
          "opacity":1,
          "type":"objectgroup",

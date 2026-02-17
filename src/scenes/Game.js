@@ -1,7 +1,7 @@
-import { Player } from '../gameObjects/Player.js'
-import { Building } from '../gameObjects/Building.js'
+import Player from '../gameObjects/Player.js'
+import Building from '../gameObjects/Building.js'
 
-export class Game extends Phaser.Scene {
+export default class Game extends Phaser.Scene {
   constructor () {
     super('Game')
   }
