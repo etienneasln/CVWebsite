@@ -295,7 +295,7 @@
                         {
                          "name":"targetScene",
                          "type":"string",
-                         "value":"Game"
+                         "value":"MainScene"
                         }],
                  "rotation":0,
                  "type":"",

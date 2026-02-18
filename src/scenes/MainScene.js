@@ -1,13 +1,13 @@
-import Player from '../gameObjects/Player.js'
 import Building from '../gameObjects/Building.js'
+import CVWebsitePlayerScene from './CVWebsitePlayerScene.js'
 
-export default class Game extends Phaser.Scene {
+export default class MainScene extends CVWebsitePlayerScene {
   constructor () {
-    super('Game')
+    super('MainScene')
   }
 
   preload () {
-    this.load.setPath('assets/Game')
+    this.load.setPath('assets/MainScene')
     this.load.image('background', 'tileset.png')
     this.load.image('university', 'university.png')
     this.load.image('school', 'primary school.png')
@@ -16,22 +16,10 @@ export default class Game extends Phaser.Scene {
     this.load.image('signpost', 'signpost.png')
   }
 
-  init (data) {
-    this.spawnX = data.spawnX ?? 864
-    this.spawnY = data.spawnY ?? 540
-    this.initialPlayerDirection = data.direction ?? 'down'
-  }
-
   create () {
     this.background = this.add.image(864, 540, 'background')
-    this.depthGroup = this.add.group()
 
-    this.player = new Player(
-      this,
-      this.spawnX,
-      this.spawnY,
-      this.initialPlayerDirection
-    )
+    super.create()
 
     this.depthGroup.add(this.player)
 
@@ -41,14 +29,6 @@ export default class Game extends Phaser.Scene {
       this.background.width,
       this.background.height
     )
-    this.physics.world.setBounds(
-      0,
-      0,
-      this.background.width,
-      this.background.height
-    )
-
-    this.cursors = this.input.keyboard.createCursorKeys()
 
     this.cameras.main.startFollow(this.player)
 
@@ -84,23 +64,11 @@ export default class Game extends Phaser.Scene {
     })
   }
 
-  update () {
-    if (this.cursors.up.isDown) {
-      this.player.moveUp()
-    } else if (this.cursors.down.isDown) {
-      this.player.moveDown()
-    } else if (this.cursors.left.isDown) {
-      this.player.moveLeft()
-    } else if (this.cursors.right.isDown) {
-      this.player.moveRight()
-    } else {
-      this.player.idle()
-    }
+  sceneWidth () {
+    return this.background.width
+  }
 
-    this.depthGroup.children.iterate(child => {
-      if (child.y !== undefined) {
-        child.setDepth(child.y)
-      }
-    })
+  sceneHeight () {
+    return this.background.height
   }
 }

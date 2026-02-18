@@ -18,7 +18,7 @@ export default class Schoolhallway extends InteriorTiledScene {
 
   targetSceneData (targetScene) {
     switch (targetScene) {
-      case 'Game':
+      case 'MainScene':
         this.spawnX = 709
         this.spawnY = 710
         this.direction = 'down'

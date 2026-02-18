@@ -134,7 +134,7 @@
   </object>
   <object id="21" x="476" y="632.667" width="8" height="8">
    <properties>
-    <property name="targetScene" value="Game"/>
+    <property name="targetScene" value="MainScene"/>
    </properties>
   </object>
  </objectgroup>

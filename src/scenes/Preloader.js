@@ -17,6 +17,10 @@ export default class Preloader extends Phaser.Scene {
   }
 
   create () {
-    this.scene.start('Game')
+    this.scene.start('MainScene', {
+      spawnX: 864,
+      spawnY: 540,
+      direction: 'down'
+    })
   }
 }

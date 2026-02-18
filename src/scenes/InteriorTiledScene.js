@@ -1,18 +1,12 @@
-import Player from '../gameObjects/Player.js'
+import CVWebsitePlayerScene from './CVWebsitePlayerScene.js'
 
-export default class InteriorTiledScene extends Phaser.Scene {
+export default class InteriorTiledScene extends CVWebsitePlayerScene {
   constructor (sceneName, scenePath, tileWidth, tileHeight) {
     super(sceneName)
     this.sceneName = sceneName
     this.scenePath = scenePath
     this.tileWidth = tileWidth
     this.tileHeight = tileHeight
-  }
-
-  init (data) {
-    this.spawnX = data.spawnX
-    this.spawnY = data.spawnY
-    this.initialPlayerDirection = data.direction
   }
 
   preload () {
@@ -27,16 +21,7 @@ export default class InteriorTiledScene extends Phaser.Scene {
       tileHeight: this.tileHeight
     })
 
-    this.depthGroup = this.add.group()
-
-    this.player = new Player(
-      this,
-      this.spawnX,
-      this.spawnY,
-      this.initialPlayerDirection
-    )
-
-    this.cursors = this.input.keyboard.createCursorKeys()
+    super.create()
 
     if (centralize) {
       this.cameras.main.setScroll(
@@ -52,13 +37,6 @@ export default class InteriorTiledScene extends Phaser.Scene {
       )
       this.cameras.main.startFollow(this.player)
     }
-
-    this.physics.world.setBounds(
-      0,
-      0,
-      this.map.widthInPixels,
-      this.map.heightInPixels
-    )
 
     this.cameras.main.roundPixels = true
 
@@ -138,23 +116,11 @@ export default class InteriorTiledScene extends Phaser.Scene {
     })
   }
 
-  update () {
-    if (this.cursors.up.isDown) {
-      this.player.moveUp()
-    } else if (this.cursors.down.isDown) {
-      this.player.moveDown()
-    } else if (this.cursors.left.isDown) {
-      this.player.moveLeft()
-    } else if (this.cursors.right.isDown) {
-      this.player.moveRight()
-    } else {
-      this.player.idle()
-    }
+  sceneWidth () {
+    return this.map.widthInPixels
+  }
 
-    this.depthGroup.children.iterate(child => {
-      if (child.y !== undefined) {
-        child.setDepth(child.y)
-      }
-    })
+  sceneHeight () {
+    return this.map.heightInPixels
   }
 }
