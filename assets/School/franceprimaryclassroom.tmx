@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="13" height="8" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="13">
+ <editorsettings>
+  <export target="franceprimaryclassroom.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="Room_Builder" tilewidth="32" tileheight="32" tilecount="391" columns="17">
+  <image source="../Interior tilesets/Room_Builder.png" width="544" height="736"/>
+ </tileset>
+ <tileset firstgid="392" name="Furniture" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
+  <image source="../Interior tilesets/Furniture.png" width="512" height="2848"/>
+ </tileset>
+ <layer id="1" name="Floors" width="13" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+1073742131,1073742132,1073742132,1073742132,1073742132,1073742132,1073742132,1073742132,1073742132,1073742132,1073742132,1073742132,1073742133,
+294,295,295,295,295,295,295,295,295,295,295,295,296,
+294,295,295,295,295,295,295,295,295,295,295,295,296,
+294,295,295,295,295,295,295,295,295,295,295,295,296,
+294,295,295,295,295,295,295,295,295,295,295,295,296,
+307,308,308,308,308,308,308,308,308,308,308,308,309
+</data>
+ </layer>
+ <layer id="2" name="Walls" width="13" height="8">
+  <data encoding="csv">
+290,291,291,291,291,291,291,291,291,291,291,291,292,
+307,308,308,308,308,308,308,308,308,308,308,308,309,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="8" name="Furniture behind" width="13" height="8">
+  <data encoding="csv">
+0,0,780,781,782,0,1045,1046,0,0,0,0,0,
+0,0,796,797,798,0,1061,1062,0,0,1048,1049,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="6" name="Furniture">
+  <object id="1" gid="1056" x="160" y="128" width="32" height="32"/>
+  <object id="2" gid="1055" x="128" y="128" width="32" height="32"/>
+  <object id="3" gid="1039" x="128" y="96" width="32" height="32"/>
+  <object id="4" gid="1040" x="160" y="96" width="32" height="32"/>
+  <object id="5" gid="1041" x="192" y="96" width="32" height="32"/>
+  <object id="6" gid="1057" x="192" y="128" width="32" height="32"/>
+  <object id="7" gid="1000" x="160" y="90" width="32" height="32"/>
+ </objectgroup>
+ <layer id="7" name="Furniture in front" width="13" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Front Walls" width="13" height="8" opacity="0.63">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,
+324,325,325,325,325,325,325,325,325,325,326,788,327,
+341,342,342,342,342,342,342,342,342,342,343,804,344
+</data>
+ </layer>
+ <objectgroup id="4" name="Collisions">
+  <object id="8" x="0" y="250" width="416" height="6"/>
+  <object id="10" x="0" y="32" width="416" height="6"/>
+  <object id="11" x="147" y="96" width="55" height="14"/>
+  <object id="12" x="166" y="84" width="20" height="8"/>
+ </objectgroup>
+ <objectgroup id="5" name="Doors">
+  <object id="9" x="364" y="249" width="8" height="8">
+   <properties>
+    <property name="targetScene" value="Schoolhallway"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

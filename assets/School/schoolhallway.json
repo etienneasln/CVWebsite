@@ -261,7 +261,7 @@
                         {
                          "name":"targetScene",
                          "type":"string",
-                         "value":""
+                         "value":"FrancePrimaryClassroom"
                         }],
                  "rotation":0,
                  "type":"",
@@ -311,7 +311,7 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":31,
+ "nextobjectid":32,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

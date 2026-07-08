@@ -28,6 +28,12 @@ export default class Schoolhallway extends InteriorTiledScene {
         this.spawnY = 249
         this.direction = 'up'
         break
+      case 'FrancePrimaryClassroom':
+        this.spawnX = 368
+        this.spawnY = 249
+        this.direction = 'up'
+        break
+
     }
 
     return {

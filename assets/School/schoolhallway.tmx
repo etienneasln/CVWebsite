@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="31">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="32">
  <tileset firstgid="1" name="Furniture" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
   <image source="../Interior tilesets/Furniture.png" width="512" height="2848"/>
  </tileset>
@@ -124,7 +124,7 @@
   </object>
   <object id="19" x="907.334" y="226" width="8" height="8">
    <properties>
-    <property name="targetScene" value=""/>
+    <property name="targetScene" value="FrancePrimaryClassroom"/>
    </properties>
   </object>
   <object id="20" x="906.667" y="375.334" width="8" height="8">
